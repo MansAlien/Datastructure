@@ -41,10 +41,6 @@ class stack:
 				current = current.next
 			print()
 
-	def print(self):
-		print("hello there!, I'm an error")
-
-
 s1 = stack()
 s1.add(10)
 s1.add(20)
