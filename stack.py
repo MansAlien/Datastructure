@@ -19,6 +19,18 @@ class stack:
 			current.next = new_node
 
 
+	def pop(self):
+		if self.head is None:
+			print("this stack is empty")
+
+		else:
+			current = self.head
+			while current.next.next is not None:
+				current = current.next
+
+			current.next = None
+
+
 	def print(self):
 		if self.head is None:
 			print("this stack is empty")
@@ -33,4 +45,8 @@ class stack:
 s1 = stack()
 s1.add(10)
 s1.add(20)
+s1.add(30)
+s1.add(40)
+s1.add(40)
+s1.pop()
 s1.print()
