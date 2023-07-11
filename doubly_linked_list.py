@@ -37,6 +37,27 @@ class doubly_linked_list:
 			current.next = new_node
 			new_node.pre = current
 
+	def add_after(self, data, element):
+		new_node = Node(data)
+		current = self.head
+		while current:
+			if current is None:
+				print("Linked list is empty!")
+			else:
+				if current.next is None:
+					print("The element is not found")
+				if current.data == element:
+					new_node.next = current.next
+					new_node.pre = current
+					current.next = new_node
+					break
+				elif current.data != element:
+					current = current.next
+				
+
+
+
+
 	def display(self):
 		if self.head is None:
 			print("linked list is empty!")
@@ -50,8 +71,6 @@ class doubly_linked_list:
 l1 = doubly_linked_list()
 l1.add_empty(10)
 l1.add_begin(0)
-l1.add_begin(-10)
-l1.add_begin(-20)
 l1.add_end(20)
-l1.add_end(30)
+l1.add_after("x", 43)
 l1.display()
