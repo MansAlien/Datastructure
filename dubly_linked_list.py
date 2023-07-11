@@ -2,34 +2,30 @@ class Node:
 	def __init__(self, data):
 		self.data = data
 		self.next = None
+		self.pre = None
 
-class stack:
+
+class doubly_linked_list:
 	def __init__(self):
 		self.head = None
 
-	def add(self, data):
-		new_node = Node(data)
+	def add_empty(self, data):
 		if self.head is None:
+			new_node = Node(data)
 			self.head = new_node
 		else:
-			current = self.head
-			while current.next is not None:
-				current = current.next
+			print("Linked list is not empyt!")
 
-			current.next = new_node
-
-
-	def print(self):
+	def display(self):
 		if self.head is None:
-			print("this stack is empty")
+			print("linked list is empty!")
 		else:
 			current = self.head
 			while current is not None:
 				print(current.data, end=" --> ")
 				current = current.next
-			print()
 
-s1 = stack()
-s1.add(10)
-s1.add(20)
-s1.print()
+
+l1 = doubly_linked_list()
+l1.add_end(10)
+l1.display()
