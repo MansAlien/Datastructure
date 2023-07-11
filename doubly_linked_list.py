@@ -16,6 +16,27 @@ class doubly_linked_list:
 		else:
 			print("Linked list is not empyt!")
 
+	def add_begin(self, data):
+		new_node = Node(data)
+		if self.head is None:
+			self.head = new_node
+		else:
+			new_node.next = self.head
+			self.head.pre = new_node
+			self.head = new_node
+
+	def add_end(self, data):
+		new_node = Node(data)
+		if self.head is None:
+			self.head = new_node
+		else:
+			current = self.head
+			while current.next:
+					current = current.next
+				
+			current.next = new_node
+			new_node.pre = current
+
 	def display(self):
 		if self.head is None:
 			print("linked list is empty!")
@@ -27,5 +48,10 @@ class doubly_linked_list:
 
 
 l1 = doubly_linked_list()
-l1.add_end(10)
+l1.add_empty(10)
+l1.add_begin(0)
+l1.add_begin(-10)
+l1.add_begin(-20)
+l1.add_end(20)
+l1.add_end(30)
 l1.display()
